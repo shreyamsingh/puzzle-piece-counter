@@ -13,7 +13,8 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 def hello():
     return render_template('index.html')
 
-app.config["IMAGE_UPLOADS"] = r"C:\Users\shrey\flaskapp\tmp"
+#app.config["IMAGE_UPLOADS"] = r"C:\Users\shrey\flaskapp\tmp"
+app.config["IMAGE_UPLOADS"] = r"\tmp"
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["PNG", "JPG", "JPEG"]
 
 def allowed_image(filename):
@@ -59,7 +60,7 @@ def countPieces(filename):
 
 @app.route("/upload-image", methods=["GET", "POST"])
 def upload_image():
-    if request.method == "POST":
+    '''if request.method == "POST":
         if request.files:
             image = request.files["image"]
             if image.filename == "":
@@ -73,7 +74,8 @@ def upload_image():
             n, newfile = countPieces(image.filename)
             #return render_template("image.html", user_image=os.path.join("/static/images", filename))
             return render_template("image.html", user_image=os.path.join("/tmp", image.filename), num=n, edited_image=os.path.join("/tmp", newfile))
-    return render_template("upload_image.html")
+    return render_template("upload_image.html")'''
+    return render_template("image.html", user_image=os.path.join("/tmp/puzzle.jpg"), num=n, edited_image=os.path.join("/tmp/edited.jpg"))
 
 @app.after_request
 def add_header(r):
