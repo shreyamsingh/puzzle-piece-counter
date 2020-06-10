@@ -73,7 +73,7 @@ def upload_image():
             print("Saved successfully")
             n, newfile = countPieces(image.filename)
             #return render_template("image.html", user_image=os.path.join("/static/images", filename))
-            return render_template("image.html", user_image=os.path.join("/app/tmp", image.filename), num=n, edited_image=os.path.join("/app/tmp", newfile))
+            return render_template("image.html", user_image=os.path.join("/tmp", image.filename), num=n, edited_image=os.path.join("/tmp", newfile))
     return render_template("upload_image.html")
 
 @app.after_request
