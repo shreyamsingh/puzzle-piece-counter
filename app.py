@@ -14,7 +14,7 @@ def hello():
     return render_template('index.html')
 
 #app.config["IMAGE_UPLOADS"] = r"C:\Users\shrey\flaskapp\tmp"
-app.config["IMAGE_UPLOADS"] = r"/app/tmp"
+app.config["IMAGE_UPLOADS"] = r"/app/static/images"
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["PNG", "JPG", "JPEG"]
 
 def allowed_image(filename):
@@ -27,7 +27,6 @@ def allowed_image(filename):
 
 def countPieces(filename):
     img = cv2.imread(os.path.join(app.config["IMAGE_UPLOADS"], filename))
-    print(os.path.join('/tmp', filename))
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     # gaussian transformation
@@ -73,7 +72,7 @@ def upload_image():
             print("Saved successfully")
             n, newfile = countPieces(image.filename)
             #return render_template("image.html", user_image=os.path.join("/static/images", filename))
-            return render_template("image.html", user_image=os.path.join("/tmp", image.filename), num=n, edited_image=os.path.join("/tmp", newfile))
+            return render_template("image.html", user_image=os.path.join("/static/images", image.filename), num=n, edited_image=os.path.join("/static/images", newfile))
     return render_template("upload_image.html")
 
 @app.after_request
