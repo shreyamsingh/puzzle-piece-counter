@@ -14,7 +14,7 @@ def hello():
     return render_template('index.html')
 
 #app.config["IMAGE_UPLOADS"] = r"C:\Users\shrey\flaskapp\tmp"
-app.config["IMAGE_UPLOADS"] = r"\tmp"
+app.config["IMAGE_UPLOADS"] = r"/static/images"
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["PNG", "JPG", "JPEG"]
 
 def allowed_image(filename):
@@ -60,7 +60,7 @@ def countPieces(filename):
 
 @app.route("/upload-image", methods=["GET", "POST"])
 def upload_image():
-    '''if request.method == "POST":
+    if request.method == "POST":
         if request.files:
             image = request.files["image"]
             if image.filename == "":
@@ -73,9 +73,8 @@ def upload_image():
             print("Saved successfully")
             n, newfile = countPieces(image.filename)
             #return render_template("image.html", user_image=os.path.join("/static/images", filename))
-            return render_template("image.html", user_image=os.path.join("/tmp", image.filename), num=n, edited_image=os.path.join("/tmp", newfile))
+            return render_template("image.html", user_image=os.path.join("/static/images", image.filename), num=n, edited_image=os.path.join("/static/images", newfile))
     return render_template("upload_image.html")'''
-    return render_template("image.html", user_image=("/static/images/puzzle.jpg"), num=25, edited_image=("/static/images/edited.jpg"))
 
 @app.after_request
 def add_header(r):
