@@ -1,0 +1,28 @@
+:root {
+  --main-dark: #2b0270;
+  --main-light: #ede9f2;
+}
+.customjumbotron {
+  border:5px solid white;
+  background-color: white;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+body {
+  background-color: var(--main-dark);
+}
+.customtest {
+  margin-top: 15%;
+  margin-bottom: 15%;
+}
+.images {
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+.jumbotron {
+  border-radius: 30px;
+}
+.customnavbar {
+  color: white;
+
+}

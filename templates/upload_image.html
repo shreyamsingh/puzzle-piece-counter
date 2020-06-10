@@ -1,0 +1,52 @@
+
+
+{% block main %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/main.css') }}">
+<nav class="navbar navbar-expand-lg customnavbar">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav my-2 my-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/upload-image">Upload</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="container h-100 customtest">
+          <div class="jumbotron customjumbotron text-center customtest h-100">
+
+      <h1 class="display-4"><b>Upload an Image</b></h1>
+      <p class="lead">Make sure the pieces all have a little space around them and are against a light, solid background.
+        The background must be entirely solid and you should do a sanity check of the image displayed on the right.</p>
+      <hr>
+
+      <form action="/upload-image" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="image" id="image">
+            <label class="custom-file-label" for="customFile">Choose file</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Count!</button>
+
+      </form>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

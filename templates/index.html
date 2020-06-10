@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/main.css') }}">
+  <title>Puzzle Piece Counter</title>
+
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg customnavbar">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav customlist my-2 my-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/upload-image">Upload</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container h-100 customtest">
+      <div class="jumbotron customjumbotron text-center customtest h-100">
+        <h1 class="display-4"><b>Puzzle Piece Counter</b></h1>
+        <p class="lead">using computer vision to count the number of puzzle pieces in an image</p>
+        <hr class="my-4">
+        <p></p>
+        <a href="/upload-image"><button type="button" class="btn btn-primary btn-lg">Upload</button></a>
+      </div>
+  </div>
+  <a href="mailto:shreyamsingh34@gmail.com"><p>What's good?</p></a>
+<!--<blockquote class="blockquote text-center"><h1>Puzzle Piece Counter</h1>
+<p>Upload an image and get the number of puzzle pieces in the image!</p></blockquote>
+<div class="jumbotron customjumbotron text-center">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">test test</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <a href="/upload-image"><button type="button" class="btn btn-primary btn-lg">Upload</button></a>
+</div>-->
+
+
+</body>
+</html>
