@@ -75,7 +75,7 @@ def upload_image():
             #return render_template("image.html", user_image=os.path.join("/static/images", filename))
             return render_template("image.html", user_image=os.path.join("/tmp", image.filename), num=n, edited_image=os.path.join("/tmp", newfile))
     return render_template("upload_image.html")'''
-    return render_template("image.html", user_image=("/tmp/puzzle.jpg"), num=25, edited_image=("/tmp/edited.jpg"))
+    return render_template("image.html", user_image=("/static/images/puzzle.jpg"), num=25, edited_image=("/static/images/edited.jpg"))
 
 @app.after_request
 def add_header(r):
