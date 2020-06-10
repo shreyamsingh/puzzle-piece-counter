@@ -68,7 +68,8 @@ def upload_image():
             if not allowed_image(image.filename):
                 print("Image filetype is not allowed")
                 return redirect(request.url)
-            image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))
+            #image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))
+            image.save($HOME/flaskapp/tmp)
             print("Saved successfully")
             n, newfile = countPieces(image.filename)
             #return render_template("image.html", user_image=os.path.join("/static/images", filename))
