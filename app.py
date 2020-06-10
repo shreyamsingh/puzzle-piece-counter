@@ -14,7 +14,7 @@ def hello():
     return render_template('index.html')
 
 #app.config["IMAGE_UPLOADS"] = r"C:\Users\shrey\flaskapp\tmp"
-app.config["IMAGE_UPLOADS"] = r"/app/static/images"
+app.config["IMAGE_UPLOADS"] = r"/app/tmp"
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["PNG", "JPG", "JPEG"]
 
 def allowed_image(filename):
@@ -73,7 +73,7 @@ def upload_image():
             print("Saved successfully")
             n, newfile = countPieces(image.filename)
             #return render_template("image.html", user_image=os.path.join("/static/images", filename))
-            return render_template("image.html", user_image=os.path.join("/app/static/images", image.filename), num=n, edited_image=os.path.join("/app/static/images", newfile))
+            return render_template("image.html", user_image=os.path.join("/app/tmp", image.filename), num=n, edited_image=os.path.join("/app/tmp", newfile))
     return render_template("upload_image.html")
 
 @app.after_request
